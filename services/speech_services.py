@@ -20,7 +20,7 @@ openai_api_key = os.getenv("OPENAI_API_KEY")
 
 LANGUAGE = "en"
 XTTS_SPEAKER_NAME = "Dionisio Schuyler"
-ELEVENLABS_VOICE_ID = "WArWzu0z4mbSyy5BfRKM" # Paul J. needs to be imported and the id changed accordingly
+ELEVENLABS_VOICE_ID = "iP95p4xoKVk53GoZ742B" # This is the id of Chris voice
 CARTESIA_VOICE_ID = "a0e99841-438c-4a64-b679-ae501e7d6091" # This is the id for "Barbershop Man" voice
 
 def generate_speech_deepgram(text):

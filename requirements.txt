@@ -7,3 +7,4 @@ SpeechRecognition
 google.generativeai
 websocket-client
 pyaudio
+numpy
