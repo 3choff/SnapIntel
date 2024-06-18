@@ -1,0 +1,25 @@
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+#audio files
+*.mp3
+*.wav
+*.png
+*.jpg
+*.pyc
+
+# Folders
+audio/
+images/
+building_blocks/
+logs/
+ui/
+services/__pycache__/
+utils/__pycache__/
+__pycache__/

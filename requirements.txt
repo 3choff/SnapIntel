@@ -1,0 +1,9 @@
+pillow
+python-dotenv
+keyboard
+requests
+colorama
+SpeechRecognition
+google.generativeai
+websocket-client
+pyaudio
