@@ -23,6 +23,7 @@ audio/
 images/
 building_blocks/
 logs/
+history/
 ui/
 services/__pycache__/
 utils/__pycache__/
