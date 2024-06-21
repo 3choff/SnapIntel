@@ -3,16 +3,12 @@ import requests
 import json
 
 from colorama import Fore
-LANGUAGE = "en"
-FASTWHISPERAPI_MODEL = "base" # Refer to FastwhisperAPI documentation for the model choices
+from services.config import TRANSCRIPTION_LANGUAGE, FASTWHISPERAPI_MODEL, deepgram_api_key, openai_api_key, groq_api_key
 
-deepgram_api_key = os.getenv('DEEPGRAM_API_KEY')
-openai_api_key = os.getenv("OPENAI_API_KEY")
-groq_api_key = os.getenv("GROQ_API_KEY")
 
 def transcribe_audio_deepgram(audio_file_path):
     url = "https://api.deepgram.com/v1/listen?model=nova-2&smart_format=true"
-    deepgram_api_key = os.getenv("DEEPGRAM_API_KEY")
+    
     headers = {
         "Authorization": f"Token {deepgram_api_key}",
         "Content-Type": "audio/wav"
@@ -40,7 +36,7 @@ def transcribe_audio_fastwhisperapi(audio_file_path, initial_prompt=None, vad_fi
     }
     data = {
         'model': (None, FASTWHISPERAPI_MODEL),
-        'language': (None, LANGUAGE),
+        'language': (None, TRANSCRIPTION_LANGUAGE),
         'initial_prompt': (None, initial_prompt),
         'vad_filter': (None, vad_filter),
         'min_silence_duration_ms': (None, min_silence_duration_ms),
@@ -68,7 +64,7 @@ def transcribe_audio_openai(audio_file_path):
     }
     data = {
         "model": "whisper-1",
-        "language": LANGUAGE
+        "language": TRANSCRIPTION_LANGUAGE
     }
     
 
@@ -88,7 +84,7 @@ def transcribe_audio_groq(audio_file_path):
     }
     data = {
         "model": "whisper-large-v3",
-        "language": LANGUAGE
+        "language": TRANSCRIPTION_LANGUAGE
     }
     
 

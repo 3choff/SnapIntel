@@ -3,6 +3,7 @@ import pickle
 import google.generativeai as genai
 import pathlib
 from colorama import Fore
+from services.config import google_api_key
 
 def save_chat_history(chat_session, session_file):
     with open(session_file, 'wb') as f:
@@ -15,7 +16,6 @@ def load_chat_history(session_file):
     return []
 
 def configure_gemini(model_name, history=None):
-    google_api_key = os.getenv('GOOGLE_API_KEY')
     genai.configure(api_key=google_api_key)
 
     generation_config = {

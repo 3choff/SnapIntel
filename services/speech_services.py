@@ -1,4 +1,3 @@
-import os
 import requests
 
 import pyaudio
@@ -12,22 +11,13 @@ import base64
 
 from colorama import Fore
 from utils.utils import play_audio_stream
+from services.config import deepgram_api_key, elevenlabs_api_key, cartesia_api_key, openai_api_key, XTTS_SPEAKER_NAME, ELEVENLABS_VOICE_ID, CARTESIA_VOICE_ID, DEEPGRAM_MODEL, OPENAI_VOICE, XTTS_LANGUAGE
 
-deepgram_api_key = os.getenv('DEEPGRAM_API_KEY')
-elevenlabs_api_key = os.getenv('ELEVENLABS_API_KEY')
-cartesia_api_key = os.getenv('CARTESIA_API_KEY')
-openai_api_key = os.getenv("OPENAI_API_KEY")
-
-LANGUAGE = "en"
-XTTS_SPEAKER_NAME = "Dionisio Schuyler"
-ELEVENLABS_VOICE_ID = "iP95p4xoKVk53GoZ742B" # This is the id of Chris voice
-CARTESIA_VOICE_ID = "a0e99841-438c-4a64-b679-ae501e7d6091" # This is the id for "Barbershop Man" voice
 
 def generate_speech_deepgram(text):
     
-    MODEL = "aura-arcas-en"
     ENCODING = "aac"
-    DEEPGRAM_URL = f"https://api.deepgram.com/v1/speak?model={MODEL}&encoding={ENCODING}"
+    DEEPGRAM_URL = f"https://api.deepgram.com/v1/speak?model={DEEPGRAM_MODEL}&encoding={ENCODING}"
     
     headers = {
         "Authorization": f"Token {deepgram_api_key}",
@@ -53,7 +43,7 @@ def generate_speech_openai(text):
     data = {
         "model": "tts-1",
         "input": text,
-        "voice": "nova",
+        "voice": OPENAI_VOICE,
         "response_format": "aac"
     }
     with requests.post(OPENAI_URL, headers=headers, json=data, stream=True) as r:
@@ -65,7 +55,7 @@ def generate_speech_fastxttsapi(text):
     
     payload = {
         "text": text,
-        "language": LANGUAGE,
+        "language": XTTS_LANGUAGE,
         "voice": XTTS_SPEAKER_NAME,
         "stream": True,
     }

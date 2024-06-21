@@ -4,20 +4,15 @@ import shutil
 import threading
 
 from colorama import Fore
-from dotenv import load_dotenv
+
 from utils.utils import take_screenshot, record_audio, get_current_datetime
 from utils.history import prompt_user_for_session
 from utils.log import write_log, update_log
-from services.config import get_transcription_service, get_speech_service
+from services.config import get_transcription_service, get_speech_service, GEMINI_MODEL
 from services.response_services import configure_gemini, generate_response_gemini, save_chat_history, load_chat_history
-
-load_dotenv()
 
 transcription_service = get_transcription_service()
 speech_service = get_speech_service()
-
-MODEL_NAME = "gemini-1.5-flash-latest" # Choices are "gemini-1.5-flash-latest" or "gemini-1.5-pro-latest"
-
 formatted_datetime, readable_datetime = get_current_datetime()
 
 if not os.path.exists('images'):
@@ -33,11 +28,10 @@ session_file = prompt_user_for_session(formatted_datetime)
 chat_history = load_chat_history(session_file)
 
 # Initialize chat session with the loaded history
-chat_session = configure_gemini(MODEL_NAME, chat_history)
+chat_session = configure_gemini(GEMINI_MODEL, chat_history)
 
 log_file = f"logs/session_log_{formatted_datetime}.md"
 write_log(log_file, chat_history, readable_datetime)
-
 
 temp_recording_path = 'audio/recording.wav'
 

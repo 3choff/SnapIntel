@@ -59,10 +59,34 @@ If you find SnapIntel useful, please consider leaving a star ⭐ or [donate](htt
     pip install -r requirements.txt
     ```
 
+## Configuration
+
+### API keys
+SnapIntel uses dotenv to set the API keys. Create a .env file in the root directory with your API keys. Follow the structure of the example.env file as a template.
+
+### Transcription and Speech services
+The app supports multiple transcription and speech services right out of the box. You can select from the following options:
+
+Transcription Services:
+- Deepgram
+- Openai
+- Groq
+- [FastWhisperAPI](https://github.com/3choff/FastWhisperAPI), a local transcription API server using Faster Whisper.
+
+Speech Services:
+- Deepgram
+- OpenAI
+- ElevenLabs
+- Cartesia
+- [FastXttsAPI](https://github.com/3choff/FastXttsAPI), a local speech API server using Coqui.
+
+To change the transcription or speech service, simply edit the relevant variables in the Config.py file located in the services folder. The accepted choices are commented next to each variable.
+
+In the same file, you can change other related variables such as voices and language.
 
 ## Usage
 
-To run the SnapIntel script, use the following command:
+To run the SnapIntel, use the following command:
 
 ```bash
 python app.py

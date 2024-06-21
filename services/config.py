@@ -1,9 +1,37 @@
+import os
 import importlib
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 # Define the service choices
-TRANSCRIPTION_SERVICE_CHOICE = 'deepgram' # Choices 'deepgram', 'openai', 'groq', 'fastwhisperapi'.
+TRANSCRIPTION_SERVICE_CHOICE = 'groq' # Choices 'deepgram', 'openai', 'groq', 'fastwhisperapi'.
 SPEECH_SERVICE_CHOICE = 'deepgram' # Choices 'deepgram', 'openai', 'fastxttsapi, 'elevenlabs', 'cartesia'.
 RESPONSE_SERVICE_CHOICE = 'gemini'
+
+# Define the response model name
+GEMINI_MODEL = "gemini-1.5-flash-latest" # Choices are "gemini-1.5-flash-latest" or "gemini-1.5-pro-latest"
+
+# Define the transcription services parameters
+TRANSCRIPTION_LANGUAGE = "en" # Use ISO 639-1 language codes to choose the language of the transcription or set None to automatically detect the language 
+FASTWHISPERAPI_MODEL = "base" # Refer to FastwhisperAPI documentation for the model choices
+
+# Define the speech services parameters
+XTTS_SPEAKER_NAME = "Dionisio Schuyler" # Refer to FastxttsAPI documentation for the speaker choices
+XTTS_LANGUAGE = "en"
+ELEVENLABS_VOICE_ID = "iP95p4xoKVk53GoZ742B" # This is the id of Chris voice, refer to Elevenlabs documentation for the voice choices
+CARTESIA_VOICE_ID = "a0e99841-438c-4a64-b679-ae501e7d6091" # This is the id for "Barbershop Man" voice, refer to Cartesia documentation for the voice choices
+DEEPGRAM_MODEL = "aura-arcas-en" # Refer to Deepgram documentation for the model choices
+OPENAI_VOICE = "nova" # Refer to OpenAI documentation for the voice choices
+
+# Define the API keys from the .env file
+deepgram_api_key = os.getenv('DEEPGRAM_API_KEY')
+openai_api_key = os.getenv("OPENAI_API_KEY")
+groq_api_key = os.getenv("GROQ_API_KEY")
+elevenlabs_api_key = os.getenv('ELEVENLABS_API_KEY')
+cartesia_api_key = os.getenv('CARTESIA_API_KEY')
+google_api_key = os.getenv('GOOGLE_API_KEY')
 
 # Define the available services and their corresponding module paths
 TRANSCRIPTION_SERVICES = {
@@ -45,4 +73,3 @@ def _import_service(service_dict, service_choice):
         return getattr(module, func_name)
     except (ImportError, AttributeError) as e:
         raise ImportError(f"Could not import '{module_path}': {e}")
-
