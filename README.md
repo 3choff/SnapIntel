@@ -67,6 +67,9 @@ To run the SnapIntel script, use the following command:
 ```bash
 python app.py
 ```
+
+When the app starts, it will prompt you to either start a new session or resume a previous session stored in the history folder. After making your choice, you can interact with the LLM using these key combinations:
+
 - Press Ctrl+Alt+Space to capture and analyze the screen and invoke the voice assistant.
 - Press Ctrl+Space to ask a question without capturing a screenshot or to ask a follow-up question.
 - Press ESC to stop speech playback.
