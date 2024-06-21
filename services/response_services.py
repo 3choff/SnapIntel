@@ -5,7 +5,6 @@ import pathlib
 from colorama import Fore
 
 def save_chat_history(chat_session, session_file):
-
     with open(session_file, 'wb') as f:
         pickle.dump(chat_session.history, f)
 

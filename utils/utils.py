@@ -1,8 +1,6 @@
-
 import subprocess
 import keyboard
 import speech_recognition as sr
-import base64
 
 from PIL import ImageGrab
 from colorama import Fore
@@ -10,18 +8,6 @@ from datetime import datetime
 from datetime import datetime
 
 stop_playback = False
-
-def image_to_base64(image_path):
-    with open(image_path, "rb") as image_file:
-        return base64.b64encode(image_file.read()).decode("utf-8")
-
-def update_markdown_log(question, response, log_file, image_path=None):
-    with open(log_file, "a", encoding="utf-8") as f:
-        if image_path:
-            image_base64 = image_to_base64(image_path)
-            f.write(f"### Captured Image:\n![Image](data:image/jpeg;base64,{image_base64})\n")
-        f.write(f"### Question:\n{question}\n")
-        f.write(f"### Response:\n{response}\n\n")
 
 def get_current_datetime():
     now = datetime.now()
