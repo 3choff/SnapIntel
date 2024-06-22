@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 # Define the service choices
-TRANSCRIPTION_SERVICE_CHOICE = 'groq' # Choices 'deepgram', 'openai', 'groq', 'fastwhisperapi'.
+TRANSCRIPTION_SERVICE_CHOICE = 'deepgram' # Choices 'deepgram', 'openai', 'groq', 'fastwhisperapi'.
 SPEECH_SERVICE_CHOICE = 'deepgram' # Choices 'deepgram', 'openai', 'fastxttsapi, 'elevenlabs', 'cartesia'.
 RESPONSE_SERVICE_CHOICE = 'gemini'
 

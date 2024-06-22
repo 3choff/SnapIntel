@@ -7,7 +7,7 @@ This project is an open-source initiative that leverages Google Gemini to analyz
 
 If you find SnapIntel useful, please consider leaving a star ⭐ or [donate](https://ko-fi.com/3choff).
 
-## Video Demo:
+## Video Demo
 
 
 ## Features

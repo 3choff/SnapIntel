@@ -22,4 +22,4 @@ def prompt_user_for_session(formatted_datetime):
             except ValueError:
                 print(Fore.YELLOW + "Invalid input. Please enter a number." + Fore.RESET)
     else:
-        return f'history/session_{formatted_datetime}.pkl'
+        return f'history/session_history_{formatted_datetime}.pkl'
