@@ -20,7 +20,7 @@ FASTWHISPERAPI_MODEL = "base" # Refer to FastwhisperAPI documentation for the mo
 # Define the speech services parameters
 XTTS_SPEAKER_NAME = "Dionisio Schuyler" # Refer to FastxttsAPI documentation for the speaker choices
 XTTS_LANGUAGE = "en"
-ELEVENLABS_VOICE_ID = "iP95p4xoKVk53GoZ742B" # This is the id of Chris voice, refer to Elevenlabs documentation for the voice choices
+ELEVENLABS_VOICE_ID = "EXAVITQu4vr4xnSDxMaL" # This is the id of Sarah voice, refer to Elevenlabs documentation for the voice choices
 CARTESIA_VOICE_ID = "a0e99841-438c-4a64-b679-ae501e7d6091" # This is the id for "Barbershop Man" voice, refer to Cartesia documentation for the voice choices
 DEEPGRAM_MODEL = "aura-arcas-en" # Refer to Deepgram documentation for the model choices
 OPENAI_VOICE = "nova" # Refer to OpenAI documentation for the voice choices

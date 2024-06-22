@@ -8,7 +8,7 @@ This project is an open-source initiative that leverages Google Gemini to analyz
 If you find SnapIntel useful, please consider leaving a star ⭐ or [donate](https://ko-fi.com/3choff).
 
 ## Video Demo
-
+[![Video Demo](http://img.youtube.com/vi/pBsyJiFE-C0/0.jpg)](http://www.youtube.com/watch?v=pBsyJiFE-C0 "Video Demo")
 
 ## Features
 - **Easy and Intuitive Interface:** Use voice-to-voice interactions for a seamless user experience.
@@ -77,7 +77,7 @@ Speech Services:
 - Deepgram
 - OpenAI
 - ElevenLabs
-- Cartesia
+- Cartesia (EXPERIMENTAL)
 - [FastXttsAPI](https://github.com/3choff/FastXttsAPI), a local speech API server using Coqui.
 
 To change the transcription or speech service, simply edit the relevant variables in the Config.py file located in the services folder. The accepted choices are commented next to each variable.
