@@ -23,7 +23,23 @@ If you find SnapIntel useful, please consider leaving a star ⭐ or [donate](htt
 
 ## Requirements
 - Python 3.10 or greater
-- Refer to the [FastWhisperAPI](https://github.com/3choff/FastWhisperAPI) and [FastXttsAPI](https://github.com/3choff/FastXttsAPI) documentation for information on local deployment and requirements of these two services.
+- [FFmpeg](https://www.ffmpeg.org/download.html). Instructions on how to install it can be found [here](https://www.hostinger.co.uk/tutorials/how-to-install-ffmpeg) 
+- [FastWhisperAPI](https://github.com/3choff/FastWhisperAPI) and [FastXttsAPI](https://github.com/3choff/FastXttsAPI) offer local transcription and speech solutions. Their use is **optional**. For information on deployment and requirements of these services, please refer to their respective documentation.
+
+## Dependencies
+
+This project depends on the following libraries:
+
+- pillow
+- python-dotenv
+- keyboard
+- requests
+- colorama
+- SpeechRecognition
+- google.generativeai
+- websocket-client
+- pyaudio
+- numpy
 
 ## Installation
 
